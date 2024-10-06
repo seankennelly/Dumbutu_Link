@@ -244,6 +244,7 @@ strong {
   color: var(--primary-color);
   font-size: var(--h6-font-size);
   font-weight: var(--font-weight-bold);
+  white-space: normal; /* Allow the text to wrap */
 }
 
 .navbar-brand span {
