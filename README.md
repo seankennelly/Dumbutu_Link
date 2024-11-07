@@ -19,4 +19,4 @@ www.dumbutulink.com
 - Made sure all images have an alt tag
 - Removed unused JS files (click-scroll.js, counter.js, custom.js)
 
-www.dumbutulink.com now purchased, so new site launched to there.
+www.dumbutulink.com domain now purchased, so new site launched to there.
