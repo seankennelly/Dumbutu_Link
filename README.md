@@ -1,3 +1,4 @@
+![The logo for the charity](images/small_logo.png)
 # Woodbury Salterton Dumbutu Link
 
 www.dumbutulink.com
