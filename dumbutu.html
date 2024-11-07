@@ -11,9 +11,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
     <!-- CSS FILES -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/bootstrap-icons.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="libraries/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="libraries/css/bootstrap-icons.css" rel="stylesheet" />
+    <link href="libraries/css/styles.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -21,53 +21,13 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-12 d-flex flex-wrap">
-            <p class="d-flex me-4 mb-0">Your support helps the Dumbutu community. Sign up to donate today</p>
+            <p class="d-flex me-4 mb-0">Your support helps the Dumbutu community. <a href="donate.html" class="text-decoration-underline ms-2">Sign up to donate today</a></p>
           </div>
         </div>
       </div>
     </header>
 
-    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="images/logo.png" class="logo img-fluid" alt="" />
-          <span>
-            Woodbury Salterton Dumbutu Link
-            <small>Devon-based charity</small>
-          </span>
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link click-scroll" href="index.html">Home</a>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
-
-              <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                <li><a class="dropdown-item" href="dumbutu.html">Dumbutu</a></li>
-
-                <li><a class="dropdown-item" href="charity.html">The Link</a></li>
-              </ul>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link click-scroll" href="projects.html">Our Projects</a>
-            </li>
-
-            <li class="nav-item ms-3">
-              <a class="nav-link custom-btn custom-border-btn btn" href="donate.html">Donate</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <main>
       <section class="about-header-section text-center">
@@ -98,11 +58,11 @@
                   </p>
                   <div class="row mt-5 mb-4">
                     <div class="col-lg-6 col-12 mb-4 mb-lg-0">
-                      <img src="images//map.png" class="about-detail-images img-fluid" alt="" />
+                      <img src="images/dumbutu_map.png" class="about-detail-images img-fluid" alt="A map of the Gambia" />
                     </div>
 
                     <div class="col-lg-6 col-12">
-                      <img src="images//dumbutu_1.JPG" class="about-detail-images img-fluid" alt="" />
+                      <img src="images/dumbutu_1.JPG" class="about-detail-images img-fluid" alt="Villagers gathered in Dumbutu" />
                     </div>
                   </div>
                 </div>
@@ -123,17 +83,15 @@
                     <h4>Community and Culture</h4>
                   </div>
                   <p>
-                    Dumbutu is a close-knit community where the values of cooperation and support are deeply ingrained. The village is predominantly made up of members of the Mandinka ethnic group, one of the largest in The Gambia. Their language,
-                    Mandinka, is spoken throughout the village, although many residents also speak English, reflecting The Gambia's colonial history. The culture in Dumbutu is rich with traditions, including music, dance, and storytelling, often tied
-                    to important community events such as harvests, marriages, and naming ceremonies.
+                    Dumbutu is a close-knit, predominantly Islamic community where cooperation and mutual support are deeply valued. The village is primarily home to members of the Mandinka ethnic group, one of the largest in The Gambia. While Mandinka is the main language spoken, many residents are multilingual, conversing in other regional languages such as Wolof, and classical Arabic is often heard in daily interactions, reflecting both religious and cultural influences. English is also widely understood due to The Gambia's colonial history. Dumbutu's culture is rich in traditions, including music, dance, and storytelling, often tied to important community events such as harvests, marriages, and naming ceremonies.
                   </p>
                   <div class="row mt-5 mb-4">
                     <div class="col-lg-6 col-12 mb-4 mb-lg-0">
-                      <img src="images//dumbutu_2.JPG" class="about-detail-images img-fluid" alt="" />
+                      <img src="images/dumbutu_2.JPG" class="about-detail-images img-fluid" alt="A mother and baby in Dumbutu" />
                     </div>
 
                     <div class="col-lg-6 col-12">
-                      <img src="images//dumbutu_5.JPG" class="about-detail-images img-fluid" alt="" />
+                      <img src="images/dumbutu_5.JPG" class="about-detail-images img-fluid" alt="Two children in Dumbutu" />
                     </div>
                   </div>
                 </div>
@@ -155,7 +113,7 @@
         </div>
       </section>
 
-      <section class="about-section section-padding section-bg" id="future-section">
+      <section class="about-section section-padding section-bg" class="future-section">
         <div class="container">
           <div class="row">
             <div class="col-lg-6 col-12">
@@ -174,7 +132,7 @@
 
             <div class="col-lg-6 col-12">
               <div class="about-block">
-                <img src="images//dumbutu_4.JPG" alt="" id="future-img" />
+                <img src="images/dumbutu_4.JPG" alt="A mother in a headscarf with her baby on her lap" class="future-img" />
               </div>
             </div>
           </div>
@@ -182,63 +140,12 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-12 mb-4">
-            <img src="images/logo.png" class="logo img-fluid" alt="" />
-          </div>
-
-          <div class="col-lg-4 col-md-6 col-12 mb-4">
-            <h5 class="site-footer-title mb-3">Quick Links</h5>
-
-            <ul class="footer-menu">
-              <li class="footer-menu-item"><a href="dumbutu.html" class="footer-menu-link">About Dumbutu</a></li>
-
-              <li class="footer-menu-item"><a href="charity.html" class="footer-menu-link">About The Link</a></li>
-
-              <li class="footer-menu-item"><a href="projects.html" class="footer-menu-link">Our Projects</a></li>
-
-              <li class="footer-menu-item"><a href="donate.html" class="footer-menu-link">Donate</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 col-12 mx-auto">
-            <h5 class="site-footer-title mb-3">Contact Infomation</h5>
-
-            <p class="text-white d-flex">
-              <i class="bi-envelope me-2"></i>
-
-              <a href="mailto:info@yourgmail.com" class="site-footer-link"> donate@charity.org </a>
-            </p>
-
-            <a href="donate.html" class="custom-btn btn mt-3">Contact Us</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="site-footer-bottom">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-md-7 col-12">
-              <p class="copyright-text mb-0">
-                Copyright &copy;
-                <script>
-                  document.write(new Date().getFullYear());
-                </script>
-                Seán Kennelly. All Rights Reserved
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <!-- JAVASCRIPT FILES -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/counter.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="libraries/js/jquery.min.js"></script>
+    <script src="libraries/js/bootstrap.bundle.min.js"></script>
+    <script src="libraries/js/jquery.sticky.js"></script>
+    <script src="libraries/js/script.js"></script>
   </body>
 </html>
