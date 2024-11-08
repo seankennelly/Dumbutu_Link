@@ -32,3 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// GreenGeeks seal redirect
+function ggs_ggseal() {
+  window.open("https://my.greengeeks.com/seal/", "_blank");
+};

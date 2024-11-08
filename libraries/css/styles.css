@@ -433,6 +433,10 @@ strong {
   padding-top: 70px;
 }
 
+.site-footer .logo {
+  width: 113px;
+}
+
 .site-footer h5 {
   color: var(--border-color);
 }
