@@ -50,7 +50,7 @@ try {
 
   // Sender and recipient information
   $mail->setFrom($email, $name);
-  $mail->addAddress('sean.kennelly@hotmail.co.uk', 'Outlook - (Website Form)');
+  $mail->addAddress('gemjoyben@hotmail.com', 'Dumbutu Website Form');
 
   // Email content
   $reminder = 'REMINDER:<br>' . '1) Scammers often use website forms to harvest genuine email addresses (expecting an auto-reply). Enquiries that do not make sense can be ignored, and are not a risk to your data.<br>2) Links sent in these emails should be treated with the same care and caution as links sent in any other email.';
