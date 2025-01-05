@@ -16,7 +16,20 @@ $password = $config['gmail_app_password'];
 
 $mail = new PHPMailer(true);
 
+session_start();
+
 try {
+  // Rate limiting (5 emails per hour per IP)
+  if (!isset($_SESSION['mail_attempts'])) {
+    $_SESSION['mail_attempts'] = 1;
+    $_SESSION['mail_time'] = time();
+  } else {
+    $_SESSION['mail_attempts']++;
+    if ($_SESSION['mail_attempts'] > 5 && time() - $_SESSION['mail_time'] < 3600) {
+      throw new Exception('Too many submissions. Please try again later.');
+    }
+  }
+
   // Server settings
   $mail->SMTPDebug = 0;
   $mail->isSMTP();
@@ -26,6 +39,9 @@ try {
   $mail->Password = $password;
   $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
   $mail->Port = 587;
+  $mail->Timeout = 10; // 10 seconds
+  $mail->SMTPKeepAlive = true;
+
 
   // Sanitize and validate inputs
   if($_POST['formType'] === 'contact') {
@@ -40,7 +56,7 @@ try {
   }
   $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 
-  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL) || preg_match("/[\r\n]/", $email)) {
     throw new Exception('Invalid email format.');
   }
 
@@ -48,12 +64,22 @@ try {
     throw new Exception('Invalid input detected.');
   }
 
+  $giftAidConsent = htmlspecialchars($_POST['giftAid'], ENT_QUOTES, 'UTF-8');
+  $commsConsent = htmlspecialchars($_POST['commsConsent'], ENT_QUOTES, 'UTF-8');
+
+
   // Sender and recipient information
   $mail->setFrom($email, $name);
+  // $mail->addAddress('sean.kennelly@hotmail.co.uk', 'Dumbutu Website Form');
   $mail->addAddress('gemjoyben@hotmail.com', 'Dumbutu Website Form');
+  $mail->addAddress('srwilliams.uk@outlook.com', 'Dumbutu Website Form');
+
+  // Email headers (to prevent being flagged as spam)
+  $mail->addCustomHeader('X-Mailer', 'PHP/' . phpversion());
+  $mail->addCustomHeader('MIME-Version', '1.0');
 
   // Email content
-  $reminder = 'REMINDER:<br>' . '1) Scammers often use website forms to harvest genuine email addresses (expecting an auto-reply). Enquiries that do not make sense can be ignored, and are not a risk to your data.<br>2) Links sent in these emails should be treated with the same care and caution as links sent in any other email.';
+  $reminder = 'REMINDER:<br>' . '1) Scammers often use website forms to harvest genuine email addresses (expecting an auto-reply). Enquiries that do not make sense can be ignored, and are not a risk to your data.<br>2) Links sent in these emails should be treated with the same care and caution as links sent in any other email.<br>3) Please contact sean.kennelly@hotmail.co.uk if you have any issues.';
 
   $mail->isHTML(true);
 
@@ -71,5 +97,7 @@ try {
     echo 'Message has been sent!';
   }
 } catch (Exception $e) {
-  echo 'Error: ' . $e->getMessage();
+  echo 'There was an error processing your request. Please try again later.';
+  error_log($e->getMessage(), 3, 'errors.log');
+
 }
